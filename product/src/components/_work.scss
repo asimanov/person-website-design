@@ -1,0 +1,14 @@
+.intro-card__work {
+    background: url(../images/work-bw.jpg) center center no-repeat;
+    background-size: auto;
+    background-size: cover;
+}
+
+.work ul {
+    list-style-type: disc;
+    margin-left: 1em;
+}
+
+.work a:after {
+    display: none;
+}

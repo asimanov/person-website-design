@@ -1,0 +1,126 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+
+{% block head %}
+    {% include 'partials/head.html.twig' %}
+{% endblock head%}
+
+<body>
+
+{% block nav %}
+    {% include 'partials/customnav.html.twig' %}
+{% endblock %}    
+
+<main>
+
+{% block header %}
+    <header class="page-header vds-bg--base vds-text--white" style="padding-top: 45rem;">
+        <div class="intro-card intro-card__blog p-y-5">
+            <div class="container padding-top-rem-3">
+                <div class="post-header">
+                
+                    <section class="section">
+                        <div>
+                            <h2 class="m-0" style="text-align: center;">{{ page.title }}</h2>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {# <header class="asim-blog-header">
+        <div class="container">
+
+            <!-- Intro Images / need a lot of work here -->
+            <div class="intro-image">
+                <img src="{{ url('theme://images/blog/intro-mountains-bw.png') }}" alt="Mountains" />
+            </div>
+            
+            <!-- Intro Card -->
+            <div class="intro-card padding-top-rem-6">
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 border border--right border--white">
+                        <h3 class="text text--medium text-secondary center-text border border--bottom border--white padding-bottom-1">What I do</h3>
+                        <ul>
+                            <li>web design</li>
+                            <li>front-end dev</li>
+                            <li>ux design</li>
+                            <li>identity design</li>
+                            <li>project management</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12 intro-card__contact">
+                        <h3 class="text text--medium text-secondary center-text border border--bottom border--white padding-bottom-1">Get a hold of me</h3>
+                        <ul>
+                            <li class="m-0">
+                                <input type="text" value="anton.simanov@gmail.com" id="myEmail" class="copyEmail" style="z-index:-100; opacity:0; position:absolute;">
+                                <a href="#" onclick="copyEmail()" class="vds-button vds-button--outlined vds-button--sm m-0"><i class="fa fa-envelope-o fa-lg" title="Copy to clipboard"></i></a>
+                            </li>
+                            <li class="m-0"><a href="https://www.linkedin.com/in/antonsimanov/" class="vds-button vds-button--outlined vds-button--sm m-0"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                            <li class="m-0"><a href="https://twitter.com/AntonSimanov" class="vds-button vds-button--outlined vds-button--sm m-0"><i class="fa fa-twitter fa-lg"></i></a></li>
+                            <li class="m-0"><a href="https://www.facebook.com/antonsimanov" class="vds-button vds-button--outlined vds-button--sm m-0"><i class="fa fa-facebook fa-lg"></i></a></li>
+                            <li class="m-0"><a href="https://www.instagram.com/antonsimanov/" class="vds-button vds-button--outlined vds-button--sm m-0"><i class="fa fa-instagram fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+           
+    </header> #}
+{% endblock %}
+
+{% block legend %}
+    <div class="vds-bg--white">
+        <div class="container">
+            <div class="blog-legend">
+                <div class="blog-legend__type">
+                    <img src="{{ url('theme://images/blog/blog-dev.svg') }}" class="no-margin" alt="dev icon"/>
+                    <p>Dev</p>
+                </div>
+
+                <div class="blog-legend__type">
+                    <img src="{{ url('theme://images/blog/blog-design.svg') }}" class="no-margin" alt="design icon"/>
+                    <p>Design</p>
+                </div>
+
+                <div class="blog-legend__type">
+                    <img src="{{ url('theme://images/blog/blog-self.svg') }}" class="no-margin" alt="self icon"/>
+                    <p>Self</p>
+                </div>
+
+                <div class="blog-legend__type">
+                    <img src="{{ url('theme://images/blog/blog-illu.svg') }}" class="no-margin" alt="illu icon"/>
+                    <p>Illu</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <section id="body">
+        <div class="wrapper padding">
+        {% block content %}{% endblock %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}
+
+</main>
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>
+</html>

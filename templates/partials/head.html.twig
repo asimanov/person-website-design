@@ -1,0 +1,53 @@
+<head>
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/em-icon-red.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto:300,400,700|Roboto+Slab:300,400,700|Merriweather:400,700|Cousine:400,700&display=swap', 100) %}
+        {% do assets.addCss('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css', 99) %}
+        {# {% do assets.addCss('theme://black-tie/css/black-tie.min.css', 97) %} #}
+        {% do assets.addCss('theme://assets/dist/variable.min.css', 98) %}
+        {% do assets.addCss('theme://js/prism.css', 97) %}
+        {% do assets.addCss('theme://css/product.css?v=1.0.3', 96) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('https://code.jquery.com/jquery-3.4.1.min.js', 100) %}
+        {% do assets.addJs('theme://js/vds-config.js', {'priority':99, 'group':'bottom'}) %}
+        {% do assets.addJs('theme://js/assets.js?v=1.0.1', {'priority':98, 'group':'bottom'}) %}
+        {% do assets.addJs('theme://js/prism.js', {'priority':97, 'group':'bottom'}) %}
+        {% do assets.addJs('https://kit.fontawesome.com/9921667978.js', {'priority':96, 'group':'bottom'}) %}
+    {% endblock %}
+    {{ assets.js() }}
+
+    {% if page.header.background %}
+        <style>
+            .post-header-img {
+                position: relative;
+                height: 400px;
+                width: 100%;
+                margin-bottom: 1.5em;
+            }
+            .post-header-img::after {
+                content: "";
+                background: url({{ page.url }}/{{ page.header.background }});
+                background-size: cover;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                position: absolute;
+                border-radius: 4rem;
+            }
+        </style>
+    {% endif %}
+
+</head>

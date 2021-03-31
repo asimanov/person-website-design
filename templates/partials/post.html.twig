@@ -1,0 +1,64 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+
+{% block head %}
+    {% include 'partials/head.html.twig' %}
+{% endblock head%}
+
+<body>
+
+{% block nav %}
+    {% include 'partials/customnav.html.twig' %}
+{% endblock %}
+
+<main>
+
+{% block header %}
+    <header class="page-header">
+        <div class="container padding-top-rem-3">
+            <div class="post-header">
+            
+                <section class="section">
+                    <div>
+                        <h2 class="m-0">{{ page.title }}</h2>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </header> 
+{% endblock %}
+
+{% block body %}
+
+    <div class="container container--reduced post">
+        <section class="section">
+            
+            <div class="post__meta">
+                <img class="post__meta-thumbnail" src="{{ url('theme://images/blog') }}/blog-{{ page.header.thumbnail }}.svg">
+                <span class="post__meta-author">{{ page.header.author }}</span> <span class="post__meta-date"> {{ page.header.date }}</span>
+            </div>
+        
+            <div class="post-header-img"></div>
+
+            <div class="post__content padding-left-2 padding-right-2 padding-top-1 padding-bottom-2">
+            {% block content %}{% endblock %}
+            </div>
+            
+        </section>
+    </div>
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}
+
+    </main>   
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>
+</html>

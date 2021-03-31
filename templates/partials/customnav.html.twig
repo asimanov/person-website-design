@@ -1,0 +1,56 @@
+<nav class="navigation vds-bg--base">
+    <div class="container navigation__container">
+        
+        <div class="navigation__content">
+
+            <a class="navigation__title" href="{{ home_url }}">
+                <img class="img" src="{{ url('theme://images/asim.svg') }}" alt="ASIM" title="ASIM">
+            </a>
+
+            <a class="navigation__icon-back" href="#" onclick="window.history.go(-1); return false;">
+                <i class="btb bt-angle-left"></i> 
+            </a>
+
+            <a href="#/" class="navigation__icon-menu"><i id="menu-switch" class="btb bt-bars"></i></a>
+
+            <ul class="navigation__list vds-text--white">
+                <li>
+                    <a class="navigation__link" href="{{ base_url }}/blog"><i class="fad fa-home"></i> <span>Blog</span></a>
+                </li>
+                <li>
+                    <a class="navigation__link" href="{{ base_url }}/about"><i class="fad fa-flag"></i> <span>About</span></a>
+                </li>
+                <li>
+                    <a class="navigation__link" href="{{ base_url }}/work"><i class="fad fa-briefcase"></i> <span>Work</span></a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="navigation__newsletter">
+            <div class="row">
+
+                <div class="col-12 navigation__follow">
+                    <p>Stalk me (if you want to be borred):</p>
+                    <ul>
+                        <li>
+                            <input type="text" value="anton.simanov@gmail.com" id="myEmail" class="copyEmail" style="z-index:-100; opacity:0; position:absolute;">
+                            <a href="#" onclick="copyEmail()"><i class="fa fa-envelope-o text-white" title="Copy to clipboard"></i></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/antonsimanov/"><i class="fa fa-linkedin text-white"></i></a></li>
+                        <li><a href="https://twitter.com/AntonSimanov"><i class="fa fa-twitter text-white"></i></a></li>
+                        <li><a href="https://www.facebook.com/antonsimanov"><i class="fa fa-facebook text-white"></i></a></li>
+                        <li><a href="https://www.instagram.com/antonsimanov/"><i class="fa fa-instagram text-white"></i></a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row page-hint">
+        <div class="container">
+            <p class="page-hint__title">{{ page.title }}</p>
+        </div>
+    </div>
+</nav>

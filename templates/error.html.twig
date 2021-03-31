@@ -1,0 +1,35 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+	<header>
+
+        <div class="post-header">
+            <div class="container padding-top-rem-3">
+                <section class="section">
+                    <div class="align-center">
+                        <h1>{{ page.title }}</h1>
+                    </div>
+                </section>
+            </div>
+        </div>
+		   
+    </header> 
+
+    <section class="section row">
+		<div class="container container--medium post">
+			<div class="post__content padding-left-2 padding-right-2 padding-top-2 padding-bottom-2 align-center">
+		        <img src="{{ url('theme://images/la-dee-dah.gif') }}" alt="Well la di freakin da!"/>
+		        {{ page.content }}
+
+		        <p>...and if you're not careful...</p>
+
+		        <blockquote>
+					<p>You're gonna end up eating a steady diet of government cheese, and living in a van down by the river! - <a href="https://en.wikipedia.org/wiki/Matt_Foley" target="_blank">Matt Foley</a></p>
+				</blockquote>
+		    </div>
+		</div>
+    </section>
+{% endblock %}
+
+

@@ -1,0 +1,50 @@
+{% extends 'partials/blog.html.twig' %}
+
+{# {% block content %}
+    {{ page.content }}
+{% endblock %} #}
+
+{% block content %}
+
+	<div class="container">
+		<section class="section">
+
+			<div class="entry">
+				{% set collection = page.collection() %}
+				
+				{% for child in collection %}
+					<div class="entry__post">
+						<a href="{{ child.url }}" class="vds-card">
+							
+								<div class="row m-0">
+
+									<div class="col-4 entry__img">
+										<img src="{{ url('theme://images/blog/') }}/blog-{{ child.header.thumbnail }}.svg" alt="{{child.header.thumbnail}} icon"/>
+									</div>
+
+									<div class="meta col-8">
+										<p>{{ child.header.date }}</p>
+									</div>
+
+									<div class="col-12 entry__content">
+										<h5 class="p-b-1">{{ child.title }}</h5>
+										<div>{{ child.summary(200) }}</div>
+									</div>
+
+								</div>
+							
+						</a>
+					</div>
+				{% endfor %}
+
+			</div>
+
+			<div class="col-12 paginator p-t-3">
+				{% if config.plugins.pagination.enabled and collection.params.pagination %}
+                    {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+                {% endif %}
+			</div>
+
+		</section>
+	</div>
+{% endblock %}

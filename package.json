@@ -1,0 +1,49 @@
+{
+  "name": "AntonSimanovLanding",
+  "version": "0.0.1",
+  "description": "Landing Page for AntonSimanov.com",
+  "main": "assets/dist/variable.min.css",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "scss",
+    "responsive",
+    "sass",
+    "lightweight",
+    "frontend"
+  ],
+  "author": {
+    "name": "Anton Simanov",
+    "url": "https://antonsimanov.com"
+  },
+  "private": false,
+  "license": "MIT",
+  "devDependencies": {
+    "accoutrement": "^2.2.0",
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.13",
+    "cssnano": "^4.1.10",
+    "fibers": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "normalize.css": "^8.0.1",
+    "reset-css": "^5.0.1",
+    "rfs": "^9.0.3",
+    "sass": "^1.29.0"
+  },
+  "dependencies": {
+    "browserlist": "^1.0.1"
+  }
+}
