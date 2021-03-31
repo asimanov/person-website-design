@@ -1,4 +1,5 @@
 .landing-header {
+
     &__contact {
         display: flex;
         align-items: center;
@@ -13,6 +14,8 @@
                 // background: white;
                 border: none;
                 display: flex;
+                height: 30px;
+                // background: white;
                 justify-content: center;
                 align-items: center;
 

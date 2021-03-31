@@ -12,6 +12,8 @@
 
 .navigation__container {
     z-index: 100;
+    // width: 100%;
+    // padding: 0;
 }
 
 .navigation__title {
@@ -53,7 +55,7 @@
     color: rgba(255,255,255,.7) !important;
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: right;
     border: none !important;
     font-family: var(--set-font-mono);
     font-size: 0.8em;
