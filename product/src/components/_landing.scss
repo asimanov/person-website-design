@@ -27,6 +27,19 @@
     }
 }
 
+// Landing Cards
+.landing-card {
+    p {
+        font-size: 0.8em;
+        font-family: var(--set-font-sans);
+    }
+
+    span {
+        font-size: 0.6em;
+        font-family: var(--set-font-mono);
+    }
+}
+
 .landing-container {
     height: 100vh;
     display: flex;
