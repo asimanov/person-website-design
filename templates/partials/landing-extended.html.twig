@@ -1,0 +1,69 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+
+{% block head %}
+    {% include 'partials/head.html.twig' %}
+{% endblock head%}
+
+<body>
+
+<div class="row">
+
+<div class="col-xs-12 col-md-6 vds-bg--base landing-container landing-container--brand p-0" style="background: url(/user/themes/vds/images/landing-bw-7.jpg) center center no-repeat; background-size: auto; background-size: cover;">
+    <div class="landing-container__content">
+        <img src="{{ url('theme://images/asim.svg') }}" alt="ASIM" />
+    </div>
+</div>
+
+<div class="col-xs-12 col-md-6 landing-container landing-container--content p-0">
+    <div class="landing-container__content p-x-6">
+        <h5 class="vds-text--secondary">My name is Anton Simanov</h5>
+        {{ page.content }}
+
+        {# <div class="row p-b-2">
+            <div class="col-xs-12 col-sm-4">
+                <a href="about.html" class="vds-button vds-button--secondary vds-button--sm" title="about me" style="display:block; text-align:center;">about me</a>
+            </div>
+            
+            <div class="col-xs-12 col-sm-4">
+                <a href="work.html" class="vds-button vds-button--secondary vds-button--sm" title="my work" style="display:block; text-align:center;">my work</a>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+                <a href="blog.html" class="vds-button vds-button--secondary vds-button--sm" title="my blog" style="display:block; text-align:center;">my blog</a>
+            </div>
+        </div> #}
+
+        <div class="landing-container__actions row p-b-2">
+            <div class="col-xs-12 col-sm-4">
+                <a href="{{ base_url }}/about" title="about me">about</a>
+            </div>
+            
+            <div class="col-xs-12 col-sm-4">
+                <a href="{{ base_url }}/work" title="my work">work</a>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+                <a href="{{ base_url }}/blog" title="my blog">blog</a>
+            </div>
+        </div>
+
+        <ul class="landing-container__contact">
+            <li><a href="mailto:anton.simanov@gmail.com" title="anton.simanov@gmail.com"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/antonsimanov/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://twitter.com/AntonSimanov" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/antonsimanov" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/antonsimanov/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>
+</html>
