@@ -1,3 +1,4 @@
+// Landing Header
 .landing-header {
 
     &__contact {
@@ -36,6 +37,41 @@
 
     span {
         font-size: 0.6em;
+        font-family: var(--set-font-mono);
+    }
+
+    img {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+// Landing Blog 
+.landing-blog__entry {
+    padding-bottom: 1em;
+}
+
+.landing-blog-entry-card {
+    --link-color: var(--set-color-primary) !important;
+    width: 100%;
+    display: flex !important;
+    flex-direction: row;
+    // flex-wrap: wrap;
+    justify-content: flex-start;
+    border: none !important;
+
+    @media (max-width:744px){
+        flex-direction: column;
+    }
+
+    &__date,
+    &__title {
+        display: flex;
+    }
+
+    &__date {
+        padding-right: 1em;
         font-family: var(--set-font-mono);
     }
 }
