@@ -8,58 +8,139 @@
 
 <body>
 
-<div class="row">
+{% block nav %}
+    {% include 'partials/customnav.html.twig' %}
+{% endblock %}  
 
-<div class="col-xs-12 col-md-6 vds-bg--base landing-container landing-container--brand p-0" style="background: url(/user/themes/vds/images/landing-bw-7.jpg) center center no-repeat; background-size: auto; background-size: cover;">
-    <div class="landing-container__content">
-        <img src="{{ url('theme://images/asim.svg') }}" alt="ASIM" />
-    </div>
-</div>
+<header class="landing-header vds-bg--base p-t-6 p-b-4" style="background: url(/user/themes/vds/images/landing-hero.jpg) center center no-repeat; background-size: auto; background-size: cover;">
+    <div class="container vds-text--white">
+        <div class="row">
+            <div class="col-md-10 col-xs-12">
+                <span>Hi, I'm Anton Simanov! 👋🏻</span>
 
-<div class="col-xs-12 col-md-6 landing-container landing-container--content p-0">
-    <div class="landing-container__content p-x-6">
-        <h5 class="vds-text--secondary">My name is Anton Simanov</h5>
-        {{ page.content }}
+                <h1 class="p-y-1">Digital designer &amp; web developer from the San Joaquin Valley <i class="fad fa-flag-usa"></i></h1>
 
-        {# <div class="row p-b-2">
-            <div class="col-xs-12 col-sm-4">
-                <a href="about.html" class="vds-button vds-button--secondary vds-button--sm" title="about me" style="display:block; text-align:center;">about me</a>
-            </div>
-            
-            <div class="col-xs-12 col-sm-4">
-                <a href="work.html" class="vds-button vds-button--secondary vds-button--sm" title="my work" style="display:block; text-align:center;">my work</a>
-            </div>
-
-            <div class="col-xs-12 col-sm-4">
-                <a href="blog.html" class="vds-button vds-button--secondary vds-button--sm" title="my blog" style="display:block; text-align:center;">my blog</a>
-            </div>
-        </div> #}
-
-        <div class="landing-container__actions row p-b-2">
-            <div class="col-xs-12 col-sm-4">
-                <a href="{{ base_url }}/about" title="about me">about</a>
-            </div>
-            
-            <div class="col-xs-12 col-sm-4">
-                <a href="{{ base_url }}/work" title="my work">work</a>
-            </div>
-
-            <div class="col-xs-12 col-sm-4">
-                <a href="{{ base_url }}/blog" title="my blog">blog</a>
+                <p>I specialize in design, development, and maintenance of government and public sector websites and applications.</p>
+        
             </div>
         </div>
 
-        <ul class="landing-container__contact">
-            <li><a href="mailto:anton.simanov@gmail.com" title="anton.simanov@gmail.com"><i class="fas fa-envelope"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/antonsimanov/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://twitter.com/AntonSimanov" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://www.facebook.com/antonsimanov" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="https://www.instagram.com/antonsimanov/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
-        </ul>
-    </div>
-</div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <p><a href="/work/" style="color:white;">Take a look at my work ⟶</a></p>
+            </div>
+        </div>
 
-</div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 m-b-1">
+                <p class="m-0">Have a question for me? Let's chat!</p>
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+                <ul class="landing-header__contact">
+                    <li><a href="mailto:anton.simanov@gmail.com" title="anton.simanov@gmail.com"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/antonsimanov/" target="_blank" rel="noopener noreferrer" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://twitter.com/AntonSimanov" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/antonsimanov" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/antonsimanov/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<!-- Specialties -->
+<section class="vds-bg--base-tint p-t-1">
+    <div class="container">
+        <div class="row p-y-5">
+
+            <div class="col-xs-12 col-md-4">
+                <div class="vds-card landing-card m-b-1">
+                    <img src="{{ url('theme://images/blog/landing-design.svg') }}" alt="Design">
+
+                    <div class="vds-card__body">
+                        <p class="m-0 vds-text--secondary"><strong>Web, UI, UX Design</strong></p>
+                        <p class="m-0">
+                            I design websites and applications with the goal of providing solutions to problems, communicate clearly, and present visually pleasing products.
+                        </p>
+                    </div>
+                    <div class="vds-card__footer justify-content-center vds-bg--secondary vds-text--base-tint">
+                        <span>Design Systems, Web Design, Responsive Design, App Design, UI Design, UX design, Adobe, Figma</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+                <div class="vds-card landing-card m-b-1">
+                    <img src="{{ url('theme://images/blog/landing-dev.svg') }}" alt="Front-end Web Development">
+
+                    <div class="vds-card__body">
+                        <p class="m-0"><strong>Front-end Web Development</strong></p>
+                        <p class="m-0">
+                            My focus is on delivering fully ready, semantic, and accessible front-end assets. I specialize in Design System authoring as well as providing custom solutions.
+                        </p>
+                    </div>
+                    <div class="vds-card__footer justify-content-center vds-bg--base vds-text--base-tint">
+                        <span>Design System Authoring, HTML5, CSS3, SASS, JavaScript, jQuery, Razor, PHP, Twig, API, Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+                <div class="vds-card landing-card m-b-1">
+                    <img src="{{ url('theme://images/blog/landing-analytics.svg') }}" alt="Webmaster Services">
+
+                    <div class="vds-card__body">
+                        <p class="m-0 vds-text--primary"><strong>Webmaster</strong></p>
+                        <p class="m-0">
+                            Maintenance is not just about editing and authoring content. I review analytics, SEO, and audit for accesibility among perfoming various support roles.  
+                        </p>
+                    </div>
+                    <div class="vds-card__footer justify-content-center vds-bg--primary vds-text--base-tint">
+                        <span>Content Authoring, Design System Compliance, Accesibility Audit, SEO, Analytics Review</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- From the blog -->
+<section class="landing-blog">
+    <div class="container">
+        <div class="row p-t-5 p-b-1">
+
+            <div class="col-xs-12 col-md-4 p-b-2">
+                <h5>From the Blog</h5>
+                <p>Take a look at some of the things that keep me busy, be it work related, personal projects, or just life in general.</p>
+
+                <p class="m-0"><a href="/blog/" title="blog">Read all blog posts ⟶</a>
+                </p>
+            </div>
+
+            <div class="col-xs-12 col-md-8">
+
+                {% for post in page.find('/blog').children.order('date', 'desc').slice(0, 6) %}
+                    <div class="landing-blog__entry">
+                        <a href="{{ post.url }}" title="{{ post.header.title }}" class="landing-blog-entry-card">
+                            <span class="landing-blog-entry-card__date">{{ post.header.date }}</span>
+                            <h5 class="landing-blog-entry-card__title">{{ post.title }}</h5>
+                        </a>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}
 
 {% block bottom %}
     {{ assets.js('bottom') }}
