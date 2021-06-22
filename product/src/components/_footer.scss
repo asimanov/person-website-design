@@ -7,12 +7,12 @@ footer {
 }
 
 .footer-note {
-    background: rgba(27, 27, 27, 0.9);
+    background: var(--set-color-base);
     color: var(--set-color-white);
 }
 
 .footer-note-contact {
-    background: rgba(27, 27, 27, 0.95);
+    background: var(--set-color-base);
     color: var(--set-color-white);
 }
 
@@ -20,6 +20,12 @@ footer {
     color: var(--set-color-white);
     border: none;
     line-height: 0;
+    opacity: 1;
+    transition: ease-in-out .1s all;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .footer-note-contact a:after {
