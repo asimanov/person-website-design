@@ -12,3 +12,14 @@
 .work a:after {
     display: none;
 }
+
+.aside-work {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    nav {
+        position: sticky;
+        top: 60px;
+    }
+}
