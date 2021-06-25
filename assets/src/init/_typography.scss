@@ -2,30 +2,6 @@
 
 @use "../config";
 
-// Default
-// 
-html {
-  font-family: var(--set-font-html);
-  // --font-large: calc(1rem + 0.5vw);
-  // --font-small: 0.75rem;
-  // --font-smaller: 0.75em;
-  // --line-ratio: 1.4;
-  // --rhythm: 1.4rem;
-}
-
-body {
-  font-family: var(--set-font-body);
-  font-size: var(--set-font-size-base);
-  font-weight: var(--set-font-weight-base);
-  line-height: var(--set-font-line-height);
-  letter-spacing: var(--set-font-letter-spacing);
-  color: var(--set-color-base);
-}
-
-[data-hidden] {
-  @include config.is-hidden;
-}
-
 // Headings
 // 
 h1 {

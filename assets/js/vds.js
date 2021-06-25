@@ -12,9 +12,6 @@ function cssPropWrite() {
 
     document.documentElement.style
     .setProperty('--add-font-mono', 'Cousine');
-
-    // document.documentElement.style
-    // .setProperty('--set-font-body', 'var(--set-font-mono)')
 }
 
 function productNav() {
@@ -41,7 +38,6 @@ function productNav() {
     });
     
     document.querySelector('.vds-kitchen-sink-content').addEventListener('click', function(e) {
-        e.preventDefault();
 
         [].map.call(document.querySelectorAll('.vds-kitchen-sink-nav'), function(el) {
             el.classList.remove('vds-kitchen-sink-nav--active');
@@ -62,17 +58,3 @@ function productNav() {
     });
 
 }
-
-
-// $(document).ready(function(){
-//     cssPropWrite();
-
-/* <![CDATA[ */
-// ( function( $ ) {
-//     $( 'a[href="#"]' ).click( function(e) {
-//         e.preventDefault();
-//     } );
-// } )( jQuery );
-/* ]]> */
-
-// });
