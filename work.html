@@ -51,6 +51,8 @@
 </head>
 <body>
 
+    <div class="vds-warning-browser"><i class="fad fa-exclamation-triangle" aria-hidden="true"></i> <span>You are using an outdated browser. Our site may not work optimally or at all in older browsers.</span></div>
+
     <!-- Nav -->
     <nav class="navigation vds-bg--base">
         <div class="container navigation__container">
@@ -130,21 +132,21 @@
         
         <div class="row">
 
-        <div class="col-xs-12 col-md-3">
-            <aside class="aside-work">
+        <div class="col-xs-12 col-md-3 p-b-2">
+            <aside class="aside-nav">
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">Design Systems</a>
+                            <a href="#navDesignSystems">Design Systems</a>
                         </li>
                         <li>
-                            <a href="#">SJVAPCD</a>
+                            <a href="#navSJVAPCD">SJVAPCD</a>
                         </li>
                         <li>
-                            <a href="#">Identity</a>
+                            <a href="#navIdentity">Identity</a>
                         </li>
                         <li>
-                            <a href="#">Illustration</a>
+                            <a href="#navIllustration">Illustration</a>
                         </li>
                     </ul>
                 </nav>
@@ -157,69 +159,63 @@
             <div class="post-header-img"></div>
 
             <div class="post__content">
-                <h3>Design Systems</h3>
+                <h3 id="navDesignSystems">Design Systems</h3>
 
                 <div class="row p-y-2">
                     
-                    <div class="col-xs-12 col-md-4">
-                        <div class="vds-card m-b-1">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/variable-design-system.jpg);">
-                                <div class="p-y-3 p-x-1">
+                    <div class="col-12">
+                        <div class="vds-card vds-card--hr m-b-1">
+                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/variable-design-system.jpg); width: 50%;">
+                                <div class="p-y-1 p-x-1">
                                     <h4 class="m-0">Variable Design System</h4>
                                 </div>
                             </div>
 
                             <div class="vds-card__body">
-                                <p class="m-0">A lightweight design system based on css custom properties.</p>
-                            </div>
+                                <p class="m-0 font-size--sm">A lightweight design system composed with CSS custom props, built with sass modules, & configurable with JS.</p>
 
-                            <div class="vds-card__footer justify-content-center vds-bg--secondary">
-                                <div class="vds-button-group">
-                                    <a href="https://simanov.dev/vds" target="_blank" class="vds-button vds-button--outlined-light vds-button--sm m-0" rel="noopener noreferrer" title="variable design system docs and demo">docs</a>
-                                    <a href="https://github.com/asimanov/variable-design-system" target="_blank" class="vds-button vds-button--outlined-light vds-button--sm m-0" rel="noopener noreferrer" title="variable design system git repo">git</a>
+                                <div class="p-t-1">
+                                    <a href="https://simanov.dev/vds" target="_blank" class="vds-button vds-button--outlined vds-button--sm m-0" rel="noopener noreferrer" title="variable design system docs and demo">docs</a>
+                                    <a href="https://github.com/asimanov/variable-design-system" target="_blank" class="vds-button vds-button--outlined vds-button--sm m-0" rel="noopener noreferrer" title="variable design system git repo">git</a>
                                 </div>
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-md-4">
-                        <div class="vds-card m-b-1">
-                            <div class="vds-card__img-title" style="background-image:url(https://valleyair.org/design-system/assets/img/launch-bg-mountain.jpg);">
-                                <div class="p-y-3 p-x-1">
-                                    <h4 class="m-0">Valley Air Design System</h4>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="vds-card vds-card--hr m-b-1">
+                            <div class="vds-card__img-title" style="background-image:url(https://valleyair.org/design-system/assets/img/launch-bg-mountain.jpg); width: 50%;">
+                                <div class="p-y-1 p-x-1">
+                                    <h5 class="m-0">Valley Air Design System</h5>
                                 </div>
                             </div>
 
                             <div class="vds-card__body">
-                                <p class="m-0">Extends the Air District brand to web applications, pages, & web content.</p>
-                            </div>
+                                <p class="m-0 font-size--sm">Extends the Air District brand to web applications, pages, & web content.</p>
 
-                            <div class="vds-card__footer justify-content-center vds-bg--primary">
-                                <div class="vds-button-group">
-                                    <a href="https://valleyair.org/design-system/assets" target="_blank" class="vds-button vds-button--outlined-light vds-button--sm m-0" rel="noopener noreferrer" title="Valley Air Design System Documentation">docs</a>
+                                <div class="p-t-1">
+                                    <a href="https://valleyair.org/design-system/assets" target="_blank" class="vds-button vds-button--outlined vds-button--sm m-0" rel="noopener noreferrer" title="Valley Air Design System Documentation">docs</a>
                                 </div>
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-md-4">
-                        <div class="vds-card m-b-1">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/fimg.jpg);">
-                                <div class="p-y-6 p-x-1">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="vds-card vds-card--hr m-b-1">
+                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/fimg.jpg); width: 50%;">
+                                <div class="p-y-1 p-x-1">
                                     <h4 class="m-0">Fabric</h4>
                                 </div>
                             </div>
 
                             <div class="vds-card__body">
-                                <p class="m-0">A dead simple one-page responsive framework with a couple features.</p>
-                            </div>
+                                <p class="m-0 font-size--sm">A dead simple one-page responsive framework with a couple features.</p>
 
-                            <div class="vds-card__footer justify-content-center vds-bg--base">
-                                <div class="vds-button-group">
-                                    <a href="https://simanov.dev/fabric/" target="_blank" class="vds-button vds-button--outlined-light vds-button--sm m-0" rel="noopener noreferrer" title="variable design system docs and demo">docs</a>
-                                    <a href="https://github.com/asimanov/fabric" target="_blank" class="vds-button vds-button--outlined-light vds-button--sm m-0" rel="noopener noreferrer" title="variable design system git repo">git</a>
+                                <div class="p-t-1">
+                                    <a href="https://simanov.dev/fabric/" target="_blank" class="vds-button vds-button--outlined vds-button--sm m-0" rel="noopener noreferrer" title="variable design system docs and demo">docs</a>
+                                    <a href="https://github.com/asimanov/fabric" target="_blank" class="vds-button vds-button--outlined vds-button--sm m-0" rel="noopener noreferrer" title="variable design system git repo">git</a>
                                 </div>
                             </div>
 
@@ -228,22 +224,29 @@
                     
                 </div>
 
-<p><br></p>
-<p><strong>Government public-facing products that I've had the privilege of working on:</strong></p>
-<ul>
-<li><a href="https://ww2.valleyair.org/contact" title="Valley Air District" target="_blank" rel="noopener noreferrer">Valley Air CMS implementation</a></li>
-<li><a href="http://community.valleyair.org" title="San Joaquin Valley Community Engagement and Protection" target="_blank" rel="noopener noreferrer">San Joaquin Valley Community Engagement and Protection</a></li>
-<li><a href="http://vwbusmoney.valleyair.org" title="VW Mitigation Trust | Bus Money" target="_blank" rel="noopener noreferrer">VW Mitigation Trust: Bus Money</a></li>
-<li><a href="http://www.valleyair.org/app" title="Valley Air app" target="_blank" rel="noopener noreferrer">Valley Air App</a></li>
-<li><a href="http://valleyair.org/drivecleaninthesanjoaquin" title="Drive Clean in The San Joaquin" target="_blank" rel="noopener noreferrer">Drive Clean in The San Joaquin</a></li>
-<li><a href="https://valleyair.org/rule4901" title="Residential Wood Burning Rule 4901" target="_blank" rel="noopener noreferrer">Residential Wood Burning Rule 4901</a></li>
-<li>AQA Services: <a href="http://www.valleyair.org/aqinfo/forecast.htm" title="Daily Air Quality Forecast" target="_blank" rel="noopener noreferrer">Air Quality Forecast</a>, <a href="http://www.valleyair.org/aqinfo/wildfires.htm" title="Wildfire Information" target="_blank" rel="noopener noreferrer">Wildfire Information</a>, <a href="http://www.valleyair.org/aqinfo/cbyb.htm" title="Check Before You Burn" target="_blank" rel="noopener noreferrer">Check Before You Burn</a></li>
-<li><a href="http://healthyairliving.com" title="Healthy Air Living" target="_blank" rel="noopener noreferrer">Healthy Air Living</a></li>
-<li><a href="http://www.valleyair.org/myraan" title="RAAN - Real-time Air Advisory Network" target="_blank" rel="noopener noreferrer">RAAN - Real-time Air Advisory Network</a></li>
-<li><a href="http://www.valleyair.org/waaqs" title="Web-based Archived Air Quality (WAAQ) System" target="_blank" rel="noopener noreferrer">WAAQs - Web-based Archived Air Quality System</a></li>
-<li><a href="https://valleyair.org/rwbhp" title="4901 Device Inspection System" target="_blank" rel="noopener noreferrer">4901 Device Inspection System</a></li>
-<li><a href="https://valleyair.org/grants" title="Grants &amp; Incentives" target="_blank" rel="noopener noreferrer">Grants &amp; Incentives</a></li>
-</ul>
+                <h3 id="navSJVAPCD">San Joaquin Valley Air Pollution Control District</h3>
+
+                <div class="row p-y-2">
+
+                    <div class="col-12">
+                        <ul>
+                            <li><a href="https://ww2.valleyair.org/contact" title="Valley Air District" target="_blank" rel="noopener noreferrer">Valley Air CMS implementation</a></li>
+                            <li><a href="http://community.valleyair.org" title="San Joaquin Valley Community Engagement and Protection" target="_blank" rel="noopener noreferrer">San Joaquin Valley Community Engagement and Protection</a></li>
+                            <li><a href="http://vwbusmoney.valleyair.org" title="VW Mitigation Trust | Bus Money" target="_blank" rel="noopener noreferrer">VW Mitigation Trust: Bus Money</a></li>
+                            <li><a href="http://www.valleyair.org/app" title="Valley Air app" target="_blank" rel="noopener noreferrer">Valley Air App</a></li>
+                            <li><a href="http://valleyair.org/drivecleaninthesanjoaquin" title="Drive Clean in The San Joaquin" target="_blank" rel="noopener noreferrer">Drive Clean in The San Joaquin</a></li>
+                            <li><a href="https://valleyair.org/rule4901" title="Residential Wood Burning Rule 4901" target="_blank" rel="noopener noreferrer">Residential Wood Burning Rule 4901</a></li>
+                            <li>AQA Services: <a href="http://www.valleyair.org/aqinfo/forecast.htm" title="Daily Air Quality Forecast" target="_blank" rel="noopener noreferrer">Air Quality Forecast</a>, <a href="http://www.valleyair.org/aqinfo/wildfires.htm" title="Wildfire Information" target="_blank" rel="noopener noreferrer">Wildfire Information</a>, <a href="http://www.valleyair.org/aqinfo/cbyb.htm" title="Check Before You Burn" target="_blank" rel="noopener noreferrer">Check Before You Burn</a></li>
+                            <li><a href="http://healthyairliving.com" title="Healthy Air Living" target="_blank" rel="noopener noreferrer">Healthy Air Living</a></li>
+                            <li><a href="http://www.valleyair.org/myraan" title="RAAN - Real-time Air Advisory Network" target="_blank" rel="noopener noreferrer">RAAN - Real-time Air Advisory Network</a></li>
+                            <li><a href="http://www.valleyair.org/waaqs" title="Web-based Archived Air Quality (WAAQ) System" target="_blank" rel="noopener noreferrer">WAAQs - Web-based Archived Air Quality System</a></li>
+                            <li><a href="https://valleyair.org/rwbhp" title="4901 Device Inspection System" target="_blank" rel="noopener noreferrer">4901 Device Inspection System</a></li>
+                            <li><a href="https://valleyair.org/grants" title="Grants &amp; Incentives" target="_blank" rel="noopener noreferrer">Grants &amp; Incentives</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
             
         </section>

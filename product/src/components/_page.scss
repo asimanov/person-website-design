@@ -12,3 +12,43 @@
     border-radius: 100%;
     background: #fff;
 }
+
+// internal nav
+// 
+.aside-nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    nav {
+        --aside-nav-bg: var(--set-color-base-tint);
+        --aside-nav-font: var(--set-font-mono);
+        --aside-nav-border-radius: 4rem;
+        --aside-nav-padding: 0.25em 0.5em;
+        
+        position: sticky;
+        top: 60px;
+        background: var(--aside-nav-bg);
+        font-family: var(--aside-nav-font);
+        border-radius: var(--aside-nav-border-radius);
+
+        ul {
+            li {
+                margin: 0;
+            }
+        }
+
+        a {
+            border: none;
+            display: block;
+            padding: var(--aside-nav-padding);
+            font-weight: 700;
+            transition: ease-in .1s all;
+
+            &:hover {
+                background: var(--set-color-secondary);
+                color: white;
+            }
+        }
+    }
+}
