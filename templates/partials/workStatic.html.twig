@@ -1,117 +1,20 @@
-
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
 
-    <head>
-    <meta charset="utf-8" />
-    <title>Home | ASIM</title>
+{% block head %}
+    {% include 'partials/head.html.twig' %}
+{% endblock head%}
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-	<meta name="description" content=""/> 
-	<meta name="keywords" content=""/>
-	<meta name="copyright" content=""/>
-	<meta name="lastModifiedDate" content=""/>
+<body class="work">
 
-	<meta property="og:type" content="article" />
-	<meta property="og:site_name" content="ASIM" />
-	<meta property="og:title" content="Home" />
-	<meta property="og:description" content="" />	
-	<meta property="og:url" content="/en" />
-	<meta property="og:image" content="" />
-	
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@AntonSimanov" />
-	<meta name="twitter:title" content="Home" />
-	<meta name="twitter:description" content="" />
-	<meta name="twitter:url" content="/en" />
-	<meta name="twitter:image" content="" />
+{% block nav %}
+    {% include 'partials/customnav.html.twig' %}
+{% endblock %}
 
-	
+<main>
 
-    <link rel="icon" type="image/png" href="images/em-icon-red.png" />
-    <link rel="canonical" href="https://antonsimanov.com/en" />
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Roboto+Slab:300,400,700|Merriweather:400,700|Cousine:400,700&display=swap" type="text/css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css" type="text/css" rel="stylesheet">
-<link href="assets/dist/variable.min.css" type="text/css" rel="stylesheet">
-<link href="js/prism.css" type="text/css" rel="stylesheet">
-<!-- <link href="css/product.css?v=1.0.3" type="text/css" rel="stylesheet"> -->
-<link href="product/dist/style.dev.css" type="text/css" rel="stylesheet">
-<link href="/user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet">
-<link href="/user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet">
-<link href="/user/plugins/login/css/login.css" type="text/css" rel="stylesheet">
-
-
-                                                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-
-    
-</head>
-<body>
-
-    <div class="vds-warning-browser"><i class="fad fa-exclamation-triangle" aria-hidden="true"></i> <span>You are using an outdated browser. Our site may not work optimally or at all in older browsers.</span></div>
-
-    <!-- Nav -->
-    <nav class="navigation vds-bg--base">
-        <div class="container navigation__container">
-            
-            <div class="navigation__content">
-    
-                <a class="navigation__title" href="/en">
-                    <img class="img" src="images/asim.svg" alt="ASIM" title="ASIM">
-                </a>
-    
-                <a class="navigation__icon-back" href="#" onclick="window.history.go(-1); return false;">
-                    <i class="btb bt-angle-left"></i> 
-                </a>
-    
-                <a href="#/" class="navigation__icon-menu"><i id="menu-switch" class="btb bt-bars"></i></a>
-    
-                <ul class="navigation__list vds-text--white">
-                    <li>
-                        <a class="navigation__link" href="/en/blog"><i class="fad fa-home" aria-hidden="true"></i> <span>Blog</span></a>
-                    </li>
-                    <li>
-                        <a class="navigation__link" href="/en/about"><i class="fad fa-flag" aria-hidden="true"></i> <span>About</span></a>
-                    </li>
-                    <li>
-                        <a class="navigation__link" href="/en/work"><i class="fad fa-briefcase" aria-hidden="true"></i> <span>Work</span></a>
-                    </li>
-                </ul>
-    
-            </div>
-    
-            <div class="navigation__newsletter">
-                <div class="row">
-    
-                    <div class="col-12 navigation__follow">
-                        <p>Stalk me (if you want to be borred):</p>
-                        <ul>
-                            <li>
-                                <input type="text" value="anton.simanov@gmail.com" id="myEmail" class="copyEmail" style="z-index:-100; opacity:0; position:absolute;">
-                                <a href="#" onclick="copyEmail()"><i class="fa fa-envelope-o text-white" title="Copy to clipboard" aria-hidden="true"></i><span class="sr-only">Copy to clipboard</span></a>
-                            </li>
-                            <li><a href="https://www.linkedin.com/in/antonsimanov/"><i class="fa fa-linkedin text-white" aria-hidden="true"></i></a></li>
-                            <li><a href="https://twitter.com/AntonSimanov"><i class="fa fa-twitter text-white" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.facebook.com/antonsimanov"><i class="fa fa-facebook text-white" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/antonsimanov/"><i class="fa fa-instagram text-white" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    
-        <div class="row page-hint">
-            <div class="container">
-                <p class="page-hint__title">Work</p>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Header -->
+{% block header %}
     <header class="page-header vds-bg--base vds-text--white" style="padding-top: 45rem;">
         <div class="intro-card intro-card__work p-y-5">
             <div class="container padding-top-rem-3">
@@ -119,14 +22,17 @@
                 
                     <section class="section">
                         <div>
-                            <h2 class="m-0" style="text-align: center;">Work</h2>
+                            <h2 class="m-0" style="text-align: center;">{{ page.title }}</h2>
                         </div>
                     </section>
 
                 </div>
             </div>
         </div>
-    </header>
+    </header> 
+{% endblock %}
+
+{% block body %}
 
     <div class="container post p-t-3">
         
@@ -165,7 +71,7 @@
                     
                     <div class="col-12">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/variable-design-system.jpg); min-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/variable-design-system.jpg); min-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">Variable Design System</h5>
                                 </div>
@@ -204,7 +110,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/fimg.jpg); min-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/fimg.jpg); min-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">Fabric</h5>
                                 </div>
@@ -230,7 +136,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/sjvapcd.jpg); min-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/sjvapcd.jpg); min-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">Valley Air District</h5>
                                 </div>
@@ -249,7 +155,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/ab-617.jpg); min-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/ab-617.jpg); min-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">AB <br> 617</h5>
                                 </div>
@@ -268,7 +174,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/vw-mitigation.jpg); min-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/vw-mitigation.jpg); min-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">VW</h5>
                                 </div>
@@ -287,7 +193,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/valley-air-app.jpg); min-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/valley-air-app.jpg); min-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">Valley <br> Air App</h5>
                                 </div>
@@ -306,7 +212,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/dcsj.jpg); min-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/dcsj.jpg); min-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">DCSJ</h5>
                                 </div>
@@ -325,7 +231,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/r4901.jpg); min-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/r4901.jpg); min-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">Rule <br> 4901</h5>
                                 </div>
@@ -344,7 +250,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/aqa-forecast.jpg); min-width: 40%; max-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/aqa-forecast.jpg); min-width: 40%; max-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">AQA</h5>
                                 </div>
@@ -363,7 +269,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/aqa-cbyb.jpg); min-width: 40%; max-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/aqa-cbyb.jpg); min-width: 40%; max-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">AQA</h5>
                                 </div>
@@ -382,7 +288,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/aqa-wildfires.jpg); min-width: 40%; max-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/aqa-wildfires.jpg); min-width: 40%; max-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">AQA</h5>
                                 </div>
@@ -401,7 +307,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/hal.jpg); min-width: 40%; max-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/hal.jpg); min-width: 40%; max-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">Healthy Air Living</h5>
                                 </div>
@@ -420,7 +326,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/raan.jpg); min-width: 40%; max-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/raan.jpg); min-width: 40%; max-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">RAAN</h5>
                                 </div>
@@ -439,7 +345,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/waaqs.jpg); min-width: 40%; max-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/waaqs.jpg); min-width: 40%; max-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">WAAQs</h5>
                                 </div>
@@ -458,7 +364,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/rwbhp.jpg); min-width: 40%; max-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/rwbhp.jpg); min-width: 40%; max-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">RWBHP</h5>
                                 </div>
@@ -477,7 +383,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card vds-card--hr m-b-2">
-                            <div class="vds-card__img-title" style="background-image:url(images/work/cards/grants.jpg); min-width: 40%; max-width: 40%;">
+                            <div class="vds-card__img-title" style="background-image:url(https://antonsimanov.com/user/themes/vds/images/work/cards/grants.jpg); min-width: 40%; max-width: 40%;">
                                 <div class="p-y-1 p-x-1">
                                     <h5 class="m-0">Grants</h5>
                                 </div>
@@ -502,7 +408,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/gof.svg" alt="Green Office Furnishings">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/gof.svg" alt="Green Office Furnishings">
 
                             <div class="vds-card__body">
                                 <p class="m-0 font-size--xs text-align--center">Green Office Furnishings</p>
@@ -516,7 +422,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/collecto.svg" alt="Collecto">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/collecto.svg" alt="Collecto">
 
                             <div class="vds-card__body">
                                 <p class="m-0 font-size--xs text-align--center">Collecto</p>
@@ -530,7 +436,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/jar.svg" alt="Johnson's Auto Repair">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/jar.svg" alt="Johnson's Auto Repair">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center m-t-1">
                                 <p class="m-0 font-size--xs vds-text--white text-align--center">Johnson's Auto Repair</p>
@@ -540,7 +446,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/dfc.svg" alt="DeFehr Construction">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/dfc.svg" alt="DeFehr Construction">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center m-t-1">
                                 <p class="m-0 font-size--xs vds-text--white text-align--center">DeFehr Construction</p>
@@ -550,7 +456,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/asim.svg" alt="ASIM">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/asim.svg" alt="ASIM">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center m-t-1">
                                 <p class="m-0 font-size--xs vds-text--white text-align--center">Personal Brand</p>
@@ -560,7 +466,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/fabric.svg" alt="Fabric">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/fabric.svg" alt="Fabric">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center m-t-1">
                                 <p class="m-0 font-size--xs vds-text--white text-align--center">Fabric</p>
@@ -570,7 +476,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/mustachebear.svg" alt="Mustache Bear">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/mustachebear.svg" alt="Mustache Bear">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center m-t-1">
                                 <p class="m-0 font-size--xs vds-text--white text-align--center">Mustache Bear</p>
@@ -580,7 +486,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/no12.svg" alt="NoTwelve">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/no12.svg" alt="NoTwelve">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center m-t-1">
                                 <p class="m-0 font-size--xs vds-text--white text-align--center">NoTwelve</p>
@@ -590,7 +496,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/ppress.svg" alt="Pixelnaut Press">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/ppress.svg" alt="Pixelnaut Press">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center m-t-1">
                                 <p class="m-0 font-size--xs vds-text--white text-align--center">Pixelnaut Press</p>
@@ -600,7 +506,7 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="vds-card m-b-2 p-t-1 justify-content-center">
-                            <img src="images/work/cards/identity/trc.svg" alt="The Robot Cave">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/identity/trc.svg" alt="The Robot Cave">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center m-t-1">
                                 <p class="m-0 font-size--xs vds-text--white text-align--center">The Robot Cave</p>
@@ -615,7 +521,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/spacebear.jpg" alt="spacebear">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/spacebear.jpg" alt="spacebear">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/blog" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Spacebear"><i class="fas fa-eye"></i> view</a>
@@ -625,7 +531,7 @@
                     
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/gearhead.jpg" alt="gear head">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/gearhead.jpg" alt="gear head">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/gear-head" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Gear Head"><i class="fas fa-eye"></i> view</a>
@@ -635,7 +541,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/spacehick.jpg" alt="spacehick">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/spacehick.jpg" alt="spacehick">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/spacehick" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Spacehick"><i class="fas fa-eye"></i> view</a>
@@ -645,7 +551,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/warpspeed.jpg" alt="Warp Speed 1.0">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/warpspeed.jpg" alt="Warp Speed 1.0">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/warp-speed-1-0" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Warp Speed 1.0"><i class="fas fa-eye"></i> view</a>
@@ -655,7 +561,7 @@
                     
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/carpdiem.jpg" alt="carpe diem">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/carpdiem.jpg" alt="carpe diem">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/carpe-diem" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Carpe Diem"><i class="fas fa-eye"></i> view</a>
@@ -665,7 +571,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/thirdspace.jpg" alt="third space">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/thirdspace.jpg" alt="third space">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/third-space" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Third Space"><i class="fas fa-eye"></i> view</a>
@@ -675,7 +581,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/yeti.jpg" alt="space yeti">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/yeti.jpg" alt="space yeti">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/space-yeti" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Space Yeti"><i class="fas fa-eye"></i> view</a>
@@ -685,7 +591,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/leap.jpg" alt="leap">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/leap.jpg" alt="leap">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/leap" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Leap"><i class="fas fa-eye"></i> view</a>
@@ -695,7 +601,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/spacebit.jpg" alt="spacebit">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/spacebit.jpg" alt="spacebit">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/spacebit" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Spacebit"><i class="fas fa-eye"></i> view</a>
@@ -705,7 +611,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/pixeltris.jpg" alt="pixeltris">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/pixeltris.jpg" alt="pixeltris">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/pixeltris" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Pixeltris"><i class="fas fa-eye"></i> view</a>
@@ -715,7 +621,7 @@
 
                     <div class="col-xs-12 col-md-6">
                         <div class="vds-card m-b-2 justify-content-center">
-                            <img src="images/work/cards/illu/supercolor.jpg" alt="supercolor">
+                            <img src="https://antonsimanov.com/user/themes/vds/images/work/cards/illu/supercolor.jpg" alt="supercolor">
 
                             <div class="vds-card__footer vds-bg--base justify-content-center">
                                 <a href="https://antonsimanov.com/en/blog/supercolor" class="vds-button vds-button--outlined-light vds-button--sm m-0" title="Supercolor"><i class="fas fa-eye"></i> view</a>
@@ -734,54 +640,16 @@
 
     </div>
 
-<!-- Footer -->
-<footer>
-    <section class="footer-note-contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 p-t-2">
-                    <ul>
-                        <li><a href="mailto:anton.simanov@gmail.com" title="anton.simanov@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/antonsimanov/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="https://twitter.com/AntonSimanov" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.facebook.com/antonsimanov" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/antonsimanov/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    </ul>                    
-                </div>
-            </div>
-        </div>
-    </section>
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}
 
-    <section class="footer-note">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 p-t-2">
-                    <p class="m-0 font-size--xs">Built with <a href="https://simanov.dev/vds/" title="varABLE Design System" target="_blank" rel="noopener noreferrer">Variable Design System</a> and some elbow grease.</p>
-                    <p class="m-0 font-size--xs">Powered by an open source, twig templating, markdown driven flat-file CMS. Deal with it 🕶️</p>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>   
+{% endblock %}
 
-    <section class="vds-bg--base vds-text--white">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 p-y-2 font-size--xs">
-                    <i class="fad fa-copyright" aria-hidden="true"></i>
-                    <span id="getCurrentYear">2021</span>
-                    <span>Anton Simanov</span>
-                </div>
-            </div>
-        </div>
-    </section>
-</footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/vds-config.js"></script>
-<script src="js/assets.js?v=1.0.1"></script>
-<script src="js/prism.js"></script>
-<script src="https://kit.fontawesome.com/9921667978.js"></script>
-
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
 
 </body>
 </html>
