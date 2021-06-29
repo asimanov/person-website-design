@@ -25,10 +25,11 @@
     height: 100%;
 
     nav {
-        --aside-nav-bg: var(--set-color-base-tint);
+        --aside-nav-bg: white;
         --aside-nav-font: var(--set-font-mono);
-        --aside-nav-border-radius: 4rem;
+        --aside-nav-border-radius: 0;
         --aside-nav-padding: 0.25em 0.5em;
+        --aside-nav-border-color: var(--set-color-base-tint);
         
         position: sticky;
         top: 60px;
@@ -50,10 +51,24 @@
             padding: var(--aside-nav-padding);
             font-weight: 700;
             transition: ease-in .1s all;
+            border-right: 6rem solid var(--aside-nav-border-color);
+            font-size: 0.9em;
+            word-break: break-all;
+            hyphens: auto;
 
             &:hover {
-                background: var(--set-color-secondary);
-                color: white;
+                border-color: var(--set-color-secondary);
+            }
+
+            @media (max-width:744px) {
+                border: none;
+
+                &::before {
+                    content: "\f107";
+                    font-family: "Font Awesome 5 Pro";
+                    padding-right: 0.5em;
+                    color: var(--set-color-base-light);
+                }
             }
         }
     }
